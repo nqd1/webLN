@@ -1,0 +1,738 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Variables */
+:root {
+  --primary-color: #2c7;
+  --primary-dark: #1b6;
+  --text-color: #303238;
+  --secondary-text: #959aa0;
+  --background-color: #f0eff1;
+  --card-background: #fff;
+  --border-color: #e0e0e0;
+  --header-background: #fff;
+  --section-title: #945768;
+  --section-subtitle: #a0a0a0;
+  --link-hover: #1b6;
+  --alert-background: #fffde6;
+  --footer-background: #333;
+  --footer-text: #ccc;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--header-background);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo img {
+  height: 30px;
+  width: auto;
+}
+
+.main-nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 15px;
+  position: relative;
+}
+
+.nav-item a {
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+.nav-item a:hover {
+  color: var(--link-hover);
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle i {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: var(--card-background);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  list-style: none;
+  padding: 10px;
+  display: none;
+  z-index: 101;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin-bottom: 8px;
+}
+
+.dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  margin-right: 15px;
+}
+
+.search-input {
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 6px 15px;
+  padding-right: 35px;
+  font-size: 13px;
+  width: 200px;
+}
+
+.search-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-text);
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-more {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.btn-login {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Alert Banner */
+.alert-banner {
+  background-color: var(--alert-background);
+  border-bottom: 1px solid #ffe57f;
+  padding: 10px 0;
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.alert-content i {
+  color: #f0ad4e;
+  margin-right: 10px;
+}
+
+.alert-content a {
+  color: #106cc8;
+  text-decoration: underline;
+}
+
+.alert-dismiss {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+}
+
+/* Hero Banner */
+.hero-banner {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* Announcements */
+.announcements {
+  margin-bottom: 20px;
+}
+
+.announcements-list {
+  list-style: none;
+  text-align: center;
+}
+
+.announcements-list li {
+  margin-bottom: 5px;
+}
+
+.announcement-link {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.announcement-link:hover {
+  text-decoration: underline;
+}
+
+/* Featured Section */
+.featured-section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-tabs {
+  display: flex;
+  align-items: center;
+}
+
+.tab-item {
+  margin-right: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.tab-item.active {
+  color: var(--section-title);
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--section-title);
+}
+
+.featured-slider {
+  margin-bottom: 20px;
+}
+
+.slider-container {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.slider-slide {
+  display: flex;
+  gap: 15px;
+}
+
+.novel-card {
+  flex: 1;
+  background: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.novel-card:hover {
+  transform: translateY(-5px);
+}
+
+.novel-link {
+  display: block;
+}
+
+.novel-cover {
+  position: relative;
+  height: 0;
+  padding-top: 150%; /* 2:3 aspect ratio */
+  overflow: hidden;
+}
+
+.novel-cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.novel-info {
+  padding: 10px;
+}
+
+.novel-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 1.3;
+  height: 36px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.pagination-dot.active {
+  background-color: var(--section-title);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+}
+
+.content-row {
+  display: flex;
+  gap: 20px;
+}
+
+.main-col {
+  flex: 3;
+}
+
+.sidebar-col {
+  flex: 1;
+}
+
+/* Discussion Section */
+.discussion-section {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--section-title);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.title-link {
+  color: inherit;
+}
+
+.discussion-list {
+  margin-top: 15px;
+}
+
+.discussion-item {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.discussion-link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.discussion-title {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.discussion-time {
+  color: var(--secondary-text);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Original Content & Latest Chapters Sections */
+.original-content-section,
+.latest-chapters-section {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+  color: var(--section-subtitle);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.novels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.novel-item {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.novel-item:hover {
+  transform: translateY(-5px);
+}
+
+.chapter-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.novel-volume {
+  font-size: 12px;
+  color: var(--secondary-text);
+  margin-bottom: 5px;
+  height: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  color: var(--section-title);
+  border: 1px solid var(--section-title);
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.view-more-btn:hover {
+  background-color: var(--section-title);
+  color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  margin-bottom: 20px;
+}
+
+.recent-section,
+.popular-novels-section {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.sidebar-subtitle {
+  color: var(--section-subtitle);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.popular-novels-list {
+  margin-top: 15px;
+}
+
+.popular-novel-item {
+  margin-bottom: 10px;
+}
+
+.popular-novel-link {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+}
+
+.popular-novel-link:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.popular-novel-rank {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--section-title);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.popular-novel-info {
+  flex: 1;
+}
+
+.popular-novel-title {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.popular-novel-stats {
+  color: var(--secondary-text);
+  font-size: 12px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--footer-background);
+  color: var(--footer-text);
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-contact a {
+  color: var(--footer-text);
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .content-row {
+    flex-direction: column;
+  }
+
+  .sidebar-col {
+    order: -1;
+  }
+
+  .novels-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    width: 160px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .slider-slide {
+    flex-wrap: wrap;
+  }
+
+  .novel-card {
+    flex: 0 0 calc(50% - 8px);
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    overflow-x: auto;
+  }
+
+  .nav-list {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .novels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info {
+    margin-bottom: 10px;
+  }
+}
